@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*##################################
+UnityObject
+Filename: UnityObject.cs
+Writer: Hong Guy Kim (downkhg@gmail.com)
+Comment: This class is an object that visualizes game objects in the Unity editor.
+###################################*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,9 +41,9 @@ namespace HierachyWindow
         {
             m_GameObeject = obj;
             m_nId = id + 1;
-            Vector2 vSize = UnityObjectInfo.vObjectSize;
+            Vector2 vSize = HierachyWindowSetting.vObjectSize;
             m_rectWindow = new RectEx(id * vSize.x, id * vSize.y, vSize.x, vSize.y);
-            m_strColor = UnityObjectInfo.ObjectColor;
+            m_strColor = HierachyWindowSetting.ObjectColor;
             m_strName = obj.name;
 
             Debug.Log(m_strName);
@@ -54,11 +60,11 @@ namespace HierachyWindow
         public UnityObject(int id, int idx, Component component, UnityObject parent = null)
         {
             m_nId = id * 100 + idx;
-            Vector2 vMagin = UnityObjectInfo.vMargin;
-            Vector2 vSize = UnityObjectInfo.vComponentSize;
+            Vector2 vMagin = HierachyWindowSetting.vMargin;
+            Vector2 vSize = HierachyWindowSetting.vComponentSize;
             RectEx rectParent = parent.RectWindow;
             m_rectWindow = new RectEx(rectParent.x + vMagin.x + rectParent.width, rectParent.y + idx * (vMagin.y + vSize.y), vSize.x, vSize.y);
-            m_strColor = UnityObjectInfo.ComponentColor;
+            m_strColor = HierachyWindowSetting.ComponentColor;
 
             string[] strTypeParsers = component.GetType().ToString().Split(new char[] { '.' });
             m_strName = strTypeParsers[strTypeParsers.Length - 1];
@@ -104,7 +110,7 @@ namespace HierachyWindow
                 Vector3 vEndPos = this.RectWindow.Rect.center;
                 Vector3 vCenterPos = new Vector3(vStartPos.x, vEndPos.y, 0);
 
-                Handles.DrawBezier(vStartPos, vEndPos, vCenterPos, vCenterPos, UnityObjectInfo.BezierParentColor, null, 5f);
+                Handles.DrawBezier(vStartPos, vEndPos, vCenterPos, vCenterPos, HierachyWindowSetting.BezierParentColor, null, 5f);
 
             }
 
@@ -112,7 +118,7 @@ namespace HierachyWindow
             {
                 for (int i = 0; i < m_compoents.Count; i++)
                 {
-                    Handles.DrawBezier(m_rectWindow.center, m_compoents[i].RectWindow.center, m_rectWindow.center, m_compoents[i].RectWindow.center, UnityObjectInfo.BezierParentColor, null, 5f);
+                    Handles.DrawBezier(m_rectWindow.center, m_compoents[i].RectWindow.center, m_rectWindow.center, m_compoents[i].RectWindow.center, HierachyWindowSetting.BezierParentColor, null, 5f);
                 }
             }
         }
@@ -147,7 +153,7 @@ namespace HierachyWindow
             {
                 m_compoents[i].Update(i);
             }
-            GUI.color = UnityObjectInfo.TitleObjectColor;
+            GUI.color = HierachyWindowSetting.TitleObjectColor;
             if (GUI.Button(rectButton, m_strName))
             {
                 if (m_isShowComponent)

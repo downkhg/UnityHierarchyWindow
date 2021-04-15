@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*##################################
+UnityComponet
+Filename: UnityComponet.cs
+Writer: Hong Guy Kim (downkhg@gmail.com)
+Comment: This class is an object that visualizes Componets in the Game Object.
+###################################*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,7 +77,7 @@ namespace HierachyWindow
             rectButton.height = rectTitleHeight;
             rectButton.x = 0;
             rectButton.y = 0;
-            GUI.color = UnityObjectInfo.TitleComponentColor;
+            GUI.color = HierachyWindowSetting.TitleComponentColor;
             if (GUI.Button(rectButton, m_strName))
             {
                 Debug.Log("WindowFunction" + windowID);

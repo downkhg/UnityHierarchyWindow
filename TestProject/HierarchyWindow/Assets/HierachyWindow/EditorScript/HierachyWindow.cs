@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*##################################
+HierachyEditorWindow
+Filename: HierachyEditorWindow.cs
+Writer: Hong Guy Kim (downkhg@gmail.com)
+Comment: "Hierarchy Window" is "Editor Window".
+          It has a "Hashtable" that can access information of each created node and game object, and is singletonized.
+###################################*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;

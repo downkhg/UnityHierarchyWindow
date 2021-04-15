@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*##################################
+HierachyWindowAssist
+Filename: HierachyWindowAssist.cs
+Writer: Hong Guy Kim (downkhg@gmail.com)
+Comment: In this file Class and Struct are the classes that set up or assist in the "Hierachy Window".
+###################################*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +13,7 @@ using UnityEngine;
 
 namespace HierachyWindow
 {
-    static class UnityObjectInfo
+    static class HierachyWindowSetting
     {
         public static GameObject[] GetChiledObject(GameObject obj)
         {
