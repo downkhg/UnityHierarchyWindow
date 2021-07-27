@@ -70,6 +70,15 @@ public class HierachyEditorWindow : EditorWindow
             m_hashObjects.Add(obj.GetHashCode(), unityObject);
             m_hashUnityObjects.Add(unityObject.ID, unityObject);
         }
+
+        HierachyWindowAssistTest();
+    }
+
+    void HierachyWindowAssistTest()
+    {
+        //HierachyWindowAssist.ScriptParser("CubeScprit.cs");
+        SceneInfo.LoadScene("TestScence");
+        
     }
 
     private void OnGUI()

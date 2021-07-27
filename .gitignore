@@ -58,7 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-# VisulStudio C#(Wfp,Console),C/C++(MFC) Builds files excption.
+# Build files from Visual Studio C# (Wpf, Console), C/C++ (MFC) are excluded.
 Debug/
 Release/
 obj/

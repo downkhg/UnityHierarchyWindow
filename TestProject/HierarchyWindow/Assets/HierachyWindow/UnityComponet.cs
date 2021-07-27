@@ -31,6 +31,7 @@ namespace HierachyWindow
 
         public override string ToString()
         {
+            //return string.Format("{0}/{3}:{1}\nRect{2}", m_nId, m_strName, m_rectWindow.ToString(), m_Component.GetInstanceID());
             return string.Format("{0}:{1}\nRect{2}", m_nId, m_strName, m_rectWindow.ToString());
         }
 
@@ -47,7 +48,7 @@ namespace HierachyWindow
             string[] strTypeParsers = component.GetType().ToString().Split(new char[] { '.' });
             m_strName = strTypeParsers[strTypeParsers.Length - 1];
 
-            Debug.Log(m_strName);
+            Debug.Log(string.Format("UnityComponet[{0}]:{1}",component.GetInstanceID(), m_strName));
         }
 
         public void Update(int idx)

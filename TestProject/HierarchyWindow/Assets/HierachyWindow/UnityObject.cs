@@ -46,7 +46,7 @@ namespace HierachyWindow
             m_strColor = HierachyWindowSetting.ObjectColor;
             m_strName = obj.name;
 
-            Debug.Log(m_strName);
+            Debug.Log(string.Format("UnityObject[{0}]:{1}", obj.GetInstanceID(), m_strName));
 
             Component[] componets = obj.GetComponents<Component>();
             m_compoents = new List<UnityComponet>(componets.Length);

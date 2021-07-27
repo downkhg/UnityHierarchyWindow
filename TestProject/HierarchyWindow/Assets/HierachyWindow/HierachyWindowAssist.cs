@@ -13,7 +13,18 @@ using UnityEngine;
 
 namespace HierachyWindow
 {
-    static class HierachyWindowSetting
+    static class SceneInfo
+    {
+        public static void LoadScene(string scenename)
+        {
+            string strDir = string.Format("{0}\\Assets\\Scenes\\{1}.unity", System.IO.Directory.GetCurrentDirectory(), scenename);
+            Debug.Log(strDir);
+            string strScrit = System.IO.File.ReadAllText(strDir);
+            Debug.Log(strScrit);
+        }
+    }
+
+    static class HierachyWindowAssist
     {
         public static GameObject[] GetChiledObject(GameObject obj)
         {
@@ -24,6 +35,22 @@ namespace HierachyWindow
             return obj.GetComponents<Component>();
         }
 
+        public static void ScriptParser(string filename)
+        {
+            string strDir = string.Format("{0}\\Assets\\Scprits\\{1}", System.IO.Directory.GetCurrentDirectory(), filename);
+            Debug.Log(strDir);
+            string strScrit = System.IO.File.ReadAllText(strDir);
+            Debug.Log(strScrit);
+        }
+
+        public static void CurrentSceseInfo()
+        {
+
+        }
+    }
+
+    static class HierachyWindowSetting
+    {
         public static Vector2 vMargin = new Vector2(50, 20);
         public static Vector2 vObjectSize = new Vector2(150, 100);
         public static Vector2 vComponentSize = new Vector2(150, 60);
